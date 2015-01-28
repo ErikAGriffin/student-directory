@@ -46,8 +46,12 @@ def printEach(students)
 # versus .each { |x| }  ?
 # other than that you have to use 'end' of course.
 
+
+  i = 1
+
   students.each {|student|
-    puts "#{student[:name]} from #{student[:cohort]} cohort"
+    puts "#{i}. #{student[:name]} from #{student[:cohort]} cohort"
+    i+=1
   }
 end
 
@@ -56,7 +60,7 @@ def printFooter(students)
 # Remember it's not a string, but the interpolation is
 # showing the number.
   student_count = students.count
-puts "#{student_count} students in total."
+  puts "There are #{student_count} students in total."
 end
 
 ## Program Start
