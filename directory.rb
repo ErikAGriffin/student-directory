@@ -38,6 +38,7 @@ end
 def printHeader
 puts "Current Maker's Academy Students"
 puts "--------------------------------"
+  puts "Who's name begin with 'M'"
 end
 
 
@@ -50,8 +51,12 @@ def printEach(students)
   i = 1
 
   students.each {|student|
+    if student[:name].capitalize[0] != "M"
+      #do nothing
+    else
     puts "#{i}. #{student[:name]} from #{student[:cohort]} cohort"
     i+=1
+    end
   }
 end
 
