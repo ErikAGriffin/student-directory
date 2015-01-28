@@ -5,8 +5,35 @@ student_directory = [
   {name: "Marlene", cohort: "February"},
   {name: "and me", cohort: "February"}]
 
-# I think this particular use of methods makes the code verbose
-# and less clear.
+
+
+
+def inputStudents
+
+  puts ""
+  puts "Please enter the student's name to add them to the directory"
+  puts "When done enter a blank line"
+
+  students = []
+
+
+    student = gets.chomp
+  while student != ""
+
+    students << {name: student, cohort: "February"}
+
+    puts "We now have #{students.count} students. How lovely."
+
+    student = gets.chomp
+  end
+
+  # Returns the array.
+  # Apparently I could return it by just having 'students',
+  # but I don't think that is as clear.
+  return students
+
+end
+
 
 def printHeader
 puts "Current Maker's Academy Students"
@@ -34,7 +61,8 @@ end
 
 ## Program Start
 
+students = inputStudents
 printHeader
-printEach(student_directory)
-printFooter(student_directory)
+printEach(students)
+printFooter(students)
 
